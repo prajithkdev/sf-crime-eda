@@ -38,7 +38,7 @@ flowchart LR
 ## Quickstart
 
 ```bash
-git clone https://github.com/<your-username>/sf-crime-eda.git
+git clone https://github.com/prajithkdev/sf-crime-eda.git
 cd sf-crime-eda
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
