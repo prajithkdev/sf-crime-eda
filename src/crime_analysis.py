@@ -34,8 +34,8 @@ class Functions:
     def plot_crime_by_district(dataframe):
         try:
             sns.scatterplot(
-                x='Latitude',
-                y='Longitude',
+                x='Longitude',
+                y='Latitude',
                 hue='Police District',
                 alpha=0.01,
                 data=dataframe,

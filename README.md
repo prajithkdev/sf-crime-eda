@@ -17,8 +17,8 @@ SF's open crime-incident data is large (500K+ rows) and messy enough (inconsiste
 
 - Pulls incident data directly from SF's public open-data API (no manual download step)
 - One-call summary statistics and dtype overview for a first look at the dataset
-- Robust time-string parser that returns an explicit `"Invalid time format"` instead of raising, so malformed rows don't crash a larger pipeline
-- District-colored lat/long scatter plot with low alpha to reveal density patterns across ~500K+ incident rows
+- Robust time-string parser that returns an explicit `"Invalid time format"` instead of raising, so malformed rows don't crash a larger pipeline (defined but not yet wired into the main script — see limitations below)
+- District-colored longitude/latitude scatter plot with low alpha to reveal density patterns across ~500K+ incident rows
 
 ## Tech stack
 
@@ -66,4 +66,6 @@ No metrics apply here — there's no model, only exploratory helpers. No saved o
 
 ## Background
 
-Developed as a team project for a data-mining coursework assignment (ALY6040) at Northeastern University. The original file had a syntax error (a malformed `try`/`except` in the time-parsing function) and an infinite-recursion bug in the exploration helper; both are fixed here so the code actually runs — everything else is unchanged from the original.
+Developed as a team project for a data-mining coursework assignment (ALY6040) at Northeastern University. The original file had a syntax error (a malformed `try`/`except` in the time-parsing function), an infinite-recursion bug in the exploration helper, and swapped scatter-plot axes (`x=Latitude, y=Longitude`, which renders the map sideways); all three are fixed here so the code runs and plots correctly.
+
+**Known limitation:** `convert_to_24_hour` is defined but never called anywhere in the script — it demonstrates the parsing approach but isn't wired into the main flow.
